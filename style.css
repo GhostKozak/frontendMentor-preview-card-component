@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    font-size: 15px;
+
+    font-family: var(--primary-font);
+
+    --primary-font: 'Lexend Deca', sans-serif;
+    --header-font: 'Big Shoulders Display', cursive;
+
+    --desktop-breakpoint: 1440px;
+    --mobile-breakpoint: 375px;
+
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    --tranparent-white: hsla(0, 0%, 100%, 0.75);
+    --light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+}
+
+.preview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-inline: auto;
+    width: calc(304px * 3);
+    /* Left number is card width, Right number is card amount */
+}
+
+.preview-card {
+    /* width: 304px; */
+    padding: 50px;
+}
+
+.preview-card-title {
+    margin-block: 40px;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.preview-card-description {
+    color: var(--tranparent-white);
+    line-height: 1.8em;
+}
+
+.preview-card-button {
+    width: 150px;
+    height: 40px;
+    margin-top: 80px;
+    background-color: #f2f2f2;
+    border: 2px solid var(--light-gray);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: 250ms;
+}
+
+.preview-card-button:hover {
+    color: #f2f2f2 !important;
+    background-color: transparent;
+}
+
+.preview-card.sedan {
+    background-color: var(--bright-orange);
+}
+
+.preview-card.sedan .preview-card-button {
+    color: var(--bright-orange);
+}
+
+.preview-card.suv {
+    background-color: var(--dark-cyan);
+}
+
+.preview-card.suv .preview-card-button {
+    color: var(--dark-cyan);
+}
+
+.preview-card.luxury {
+    background-color: var(--very-dark-cyan);
+}
+
+.preview-card.luxury .preview-card-button {
+    color: var(--very-dark-cyan);
+}
+
+footer {
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 1440px) {
+    .preview-cards {
+        width: 100%;
+        display: block;
+    }
+
+    .preview-card-button {
+        margin-top: 40px;
+    }
+}
